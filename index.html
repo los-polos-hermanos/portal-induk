@@ -7,7 +7,10 @@
 <title>Portal Induk - Al Amin Barokah</title>
 <style>
   html, body { margin: 0; padding: 0; height: 100%; background: #0b7a41; overflow: hidden; }
-  iframe { border: 0; display: block; width: 100%; height: 100vh; }
+  /* iframe dipaku ke viewport yang BENAR-BENAR terlihat: 100vh di HP = tinggi saat bilah alamat
+     tersembunyi, jadi menu bawah app terdorong ke luar layar. dvh memperbaiki itu; vh = cadangan. */
+  iframe { border: 0; display: block; width: 100%; height: 100vh; height: 100dvh;
+           position: fixed; inset: 0; padding-bottom: env(safe-area-inset-bottom, 0px); box-sizing: border-box; }
 </style>
 </head>
 <body>
